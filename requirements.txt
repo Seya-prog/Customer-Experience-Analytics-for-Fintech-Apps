@@ -31,3 +31,5 @@ jupyter
 
 # For reproducibility and testing
 pytest
+
+huggingface_hub[hf_xet]
