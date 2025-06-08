@@ -98,7 +98,7 @@ def test_insert_to_oracle(mock_cx_Oracle, mock_read_csv, tmp_path):
     # Mock fetchone to simulate bank existence and new bank_id creation
     # First call for CBE (None means not exists, then (1,) as new ID)
     # Second call for BOA (None means not exists, then (2,) as new ID)
-    mock_cur.fetchone.side_effect = [None, (1,), None, (2,)] 
+    mock_cur.fetchone.side_effect = [None, (1,), None, (2,), None, None] 
 
     # Temporarily change the working directory to the project root for file paths
     original_cwd = os.getcwd()
