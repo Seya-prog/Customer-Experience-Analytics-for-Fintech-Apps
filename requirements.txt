@@ -1,0 +1,33 @@
+# Web scraping
+google_play_scraper
+
+# Data manipulation
+pandas
+numpy
+python-dateutil
+
+# NLP & Sentiment Analysis
+scikit-learn
+nltk
+spacy
+textblob
+vaderSentiment
+transformers
+torch
+
+# Visualization
+matplotlib
+seaborn
+wordcloud
+
+# Database (Oracle and fallback to PostgreSQL)
+cx_Oracle
+sqlalchemy
+psycopg2-binary
+
+# Utilities
+tqdm
+jupyter
+
+# For reproducibility and testing
+pytest

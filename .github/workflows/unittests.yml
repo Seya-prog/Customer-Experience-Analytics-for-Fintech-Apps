@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, task-1, task-2, task-3, task-4 ]
+  pull_request:
+    branches: [ main, task-1, task-2, task-3, task-4 ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Download NLTK data
+        run: |
+          python -m nltk.downloader punkt stopwords vader_lexicon
+
+      - name: Run tests (if any)
+        run: |
+          if [ -d "test" ] && [ "$(ls -A test)" ]; then pytest test; else echo "No tests found."; fi
